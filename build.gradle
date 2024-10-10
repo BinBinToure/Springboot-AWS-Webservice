@@ -35,4 +35,8 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-oauth2-client')
     compile('org.springframework.session:spring-session-jdbc')
     testCompile("org.springframework.security:spring-security-test")
+    // JUnit4 추가(putty 테스트 오류로 인한)
+    testCompile("org.junit.vintage:junit-vintage-engine") {
+        exclude group: "org.hamcrest", module: "hamcrest-core"
+    }
 }
