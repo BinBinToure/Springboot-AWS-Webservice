@@ -39,4 +39,5 @@ dependencies {
     testCompile("org.junit.vintage:junit-vintage-engine") {
         exclude group: "org.hamcrest", module: "hamcrest-core"
     }
+    compile("org.mariadb.jdbc:mariadb-java-client")
 }
