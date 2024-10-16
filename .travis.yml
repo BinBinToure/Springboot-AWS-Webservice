@@ -1,6 +1,6 @@
 
 language: java
-jdk :
+jdk:
   - openjdk11
 
 branches:
@@ -22,23 +22,16 @@ before_deploy:
 
 deploy:
   - provider: s3
-    access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
-    secret_access_key: $AWS_SECRET_KEY # Travis repo settinsg에 설정된 값
-    bucket: springboot-aws-webservice-build # s3 버킷
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: springboot-aws-webservice-build
     region: ap-northeast-2
     skip_cleanup: true
     acl: private
-    local_dir: deploy # before_deploy에서 생성된 디렉토리
+    local_dir: deploy
     wait-until-deployed: true
 
-before_install:
-  - chmod +x gradlew
-
-# CI 실행 완료 시 메일로 알람
 notifications:
   email:
     recipients:
-      - ijbin4327@naver.com
-
-
-
+      ijbin4327@naver.com
