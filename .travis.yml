@@ -19,9 +19,13 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r springboot-aws-webservice *
-  - mkdir -p deploy
-  - mv springboot-aws-webservice.zip deploy/springboot-aws-webservice.zip
+  - mkdir -p before-deploy # zip에 포함시킬 파일들을 담을 디렉토리 생성
+  - cp scripts/*.sh before-deploy/
+  - cp appsepc.yml before-deploy/
+  - cp build/libs/*.jar before-deploy/
+  - cd before-deploy && zip -r before-deploy *
+  - cd ../ && mkdir -p deploy
+  - mv before-deploy/before-deploy.zip deploy/springboot-aws-webservice.zip
 
 deploy:
   - provider: s3
@@ -33,7 +37,7 @@ deploy:
     acl: private
     local_dir: deploy
     wait-until-deployed: true
-    
+
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
