@@ -39,7 +39,7 @@ dependencies {
     testCompile("org.junit.vintage:junit-vintage-engine") {
         exclude group: "org.hamcrest", module: "hamcrest-core"
     }
-    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+    compile("org.mariadb.jdbc:mariadb-java-client")
     // https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client
     // implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '3.4.1'
 
