@@ -8,8 +8,8 @@ cp $REPOSITORY/zip/*.jar $REPOSITORY/
 
 echo "> 현재 구동 중인 애플리케이션 pid 확인"
 
-CURRENT_PID=$(pgrep -fl springboot-aws-webservice | grep java | awk '{print $1}')
-# p383 오류 jar -> java로 수정
+CURRENT_PID=$(pgrep -fl springboot-aws-webservice | grep jar | awk '{print $1}')
+# p383 오류 java? jar로 수정 10.24 TEST.ver로 올림
 
 echo "> 현재 구동 중인 애플리케이션 pid: $CURRENT_PID"
 
