@@ -1,11 +1,11 @@
 # Springboot - AWS - Webservice
 
 <h1>📌Development Environment / 개발환경 </h1> <hr>
-Java<br>    
+Java, gradle <br>    
 H2, RDS  <br>    
-Spring Boot, JPA, gradle  <br>    
-Travis CI, CodeDeploy
-EC2, S3, Nginx
+Spring Boot, JPA  <br>    
+Travis CI, CodeDeploy <br>
+EC2, S3, Nginx <br>
 GIT  <br>
 <hr>
 
