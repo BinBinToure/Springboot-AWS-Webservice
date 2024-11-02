@@ -14,3 +14,5 @@ function switch_proxy() {
     echo "> 엔진엑스 Reload"
     sudo service nginx reload
 }
+
+# TRAVIS TEST
